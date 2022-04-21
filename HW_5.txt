@@ -1,0 +1,96 @@
+bool Start=true;  
+bool Show=false; 
+string n="";
+string s="";
+string b="";
+string i="";
+string c="";
+string r="";
+string t="";
+
+while(Start==true)
+{
+  Console.WriteLine("請輸入姓名:");
+  n = Console.ReadLine();
+  Console.WriteLine("請輸入性別: 1.男 2.女");
+  s = Console.ReadLine();
+  Console.WriteLine("請輸入出生年月日:");
+  b = Console.ReadLine();
+  Console.WriteLine("請輸入學號:");
+  i = Console.ReadLine();
+  
+  Show=true;
+
+  while(Show==true)
+  {  
+    if (s=="1")
+    {
+      s="男";
+    }
+    else if(s=="2")
+    {
+      s="女";
+    }
+
+    Console.WriteLine("------------------------------------------------------");
+    Console.WriteLine("姓名:"+n);
+    Console.WriteLine("性別:"+s);
+    Console.WriteLine("出生年月日"+b);
+    Console.WriteLine("學號"+i);
+    Console.WriteLine("請問資料是否正確?   正確輸入1 錯誤輸入2");
+    r = Console.ReadLine();
+    
+    if (r=="1")
+    {
+     Console.WriteLine("資料建構已完成!");
+     Console.WriteLine("是否再填一次?  (1為是 2為否) ");
+     t=Console.ReadLine();
+      if(t=="1")
+      {
+       Show=false;
+       c="";
+       r="";
+       t="";
+      }
+      else if(t=="2")
+      {
+       Show=false;
+       Start=false;
+       c="";
+       r="";
+       t="";
+      }
+    }
+    else if (r=="2")
+    {
+      Console.WriteLine("請問要修改哪項資料?  請輸入數字(1為名字 2為性別 3為生日 4為學號)");
+      c=Console.ReadLine();
+      switch(c)
+      {
+        case"1":
+          Console.WriteLine("請輸入新的姓名:");
+          n = Console.ReadLine();
+          c="";
+          break;
+        case"2":
+          Console.WriteLine("請輸入新的性別:");
+          s = Console.ReadLine();
+          c="";
+          break;
+        case"3":
+          Console.WriteLine("請輸入新的生日:");
+          b = Console.ReadLine();
+          c="";
+          break;
+        case"4":
+          Console.WriteLine("請輸入新的學號:");
+          i = Console.ReadLine();
+          c="";
+          break;
+        default:
+          c="";
+          break;
+    }
+  }
+ }
+}
